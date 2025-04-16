@@ -430,17 +430,17 @@ class Connection extends \Illuminate\Database\Connection
      */
     protected function getDefaultSchemaGrammar()
     {
-        return new Schema\Grammar();
+        return new Schema\Grammar($this);
     }
 
     /**
      * Get the default schema grammar instance.
      *
-     * @return QueryGrammar
+     * @return Query\Grammar
      */
     protected function getDefaultQueryGrammar()
     {
-        return new QueryGrammar();
+        return new Query\Grammar($this);
     }
 
     public function flushBucket($bucketName = null)

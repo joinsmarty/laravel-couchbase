@@ -94,11 +94,12 @@ class Builder extends EloquentBuilder
      * @param array $columns
      * @param string $pageName
      * @param int|null $page
+     * @param int|null $total
      * @throws \InvalidArgumentException
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      *
      */
-    public function paginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null)
+    public function paginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null, $total = null)
     {
         $page = $page ?: Paginator::resolveCurrentPage($pageName);
 
